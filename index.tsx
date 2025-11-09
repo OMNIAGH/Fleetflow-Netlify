@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { useServiceWorker, usePerformanceOptimization } from './src/hooks/usePerformance';
+// import { useServiceWorker, usePerformanceOptimization } from './src/hooks/usePerformance';
 import './src/i18n/config'; // Import i18n configuration
 
 // Service Worker Registration Component
 const ServiceWorkerRegistration: React.FC = () => {
   const { isSupported, isRegistered, isOnline, updateAvailable, updateServiceWorker } = useServiceWorker();
-  const { metrics } = usePerformanceOptimization();
+//   const { metrics } = usePerformanceOptimization();
 
   React.useEffect(() => {
     if (updateAvailable) {
