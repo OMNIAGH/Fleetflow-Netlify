@@ -1,0 +1,77 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production builds
+dist/
+build/
+out/
+
+# Environment variables - NUNCA commitear archivos .env reales
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# Lock files (algunos proyectos prefieren no versionar locks)
+# Descomenta si prefieres no versionar:
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.lock
+
+# Netlify
+.netlify/
+
+# Local development
+.env.development
+.env.production
+
+# Supabase local development (si usas supabase local)
+supabase/.temp/
+supabase/.branches/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+.turbo
+.vercel
+.output

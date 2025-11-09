@@ -1,0 +1,55 @@
+[build]
+  # Comando para construir la aplicacion
+  command = "npm run build"
+  
+  # Directorio donde se publica el build
+  publish = "dist"
+  
+  # Variables de entorno de build
+  [build.environment]
+    NODE_VERSION = "18.0.0"
+
+# Configuracion de redirects para SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  
+  # No aplicar redirect a archivos estaticos
+  conditions = {Role = ["*"]}
+
+# Headers de seguridad y performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuracion para funciones de Netlify (si se necesitan en el futuro)
+[functions]
+  directory = "netlify/functions"
+
+# Configuracion de desarrollo local
+[dev]
+  command = "npm run dev"
+  port = 5173
+  targetPort = 5173
+  autoLaunch = true
